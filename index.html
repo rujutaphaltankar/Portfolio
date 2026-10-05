@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rujuta Phaltankar — Full-Stack & AI Developer</title>
+<style>
+:root{color-scheme:light;--bg:#fff;--surface:#f7f8fc;--fg:#172033;--mut:#647087;--line:#e5e9f1;--acc:#6046d8;--acc-dark:#4932bd;--tint:#f0edff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--acc);text-decoration:none}
+a:hover{color:var(--acc-dark)}
+a:focus-visible,button:focus-visible{outline:3px solid #a99af7;outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:68px}
+nav b{font-family:Georgia,"Times New Roman",serif;font-size:21px;letter-spacing:-.04em}
+nav div a{display:inline-block;margin-left:24px;color:var(--mut);font-size:14px;font-weight:550;transition:color .2s}
+nav div a:hover{color:var(--acc)}
+.hero{position:relative;overflow:hidden;padding:104px 0 88px;background:radial-gradient(ellipse at 82% 18%,#f1eeff 0,rgba(241,238,255,0) 36%),linear-gradient(180deg,#fff 0%,#fcfbff 100%);border-bottom:1px solid var(--line)}
+.hero:before{position:absolute;right:-170px;bottom:-310px;width:550px;height:550px;border:1px solid rgba(96,70,216,.1);border-radius:50%;content:""}
+.hero:after{position:absolute;right:-95px;bottom:-235px;width:400px;height:400px;border:1px solid rgba(96,70,216,.1);border-radius:50%;content:""}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.7fr);align-items:center;gap:60px}
+.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #e7e2ff;background:#fff;padding:6px 13px;border-radius:99px;font-size:13px;color:#51439a;font-weight:600}
+.tag:before{width:8px;height:8px;border-radius:50%;background:#30b47a;box-shadow:0 0 0 4px #e8f8f0;content:""}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,6.5vw,72px);line-height:1.04;letter-spacing:-.055em;margin:22px 0 18px}
+h1 span{color:var(--acc)}
+.lead{font-size:18px;color:var(--mut);max-width:620px;line-height:1.75}
+.hero-panel{position:relative;padding:30px;border:1px solid #e9e5fa;border-radius:22px;background:rgba(255,255,255,.82);box-shadow:0 22px 60px rgba(42,35,94,.09);backdrop-filter:blur(8px)}
+.hero-panel-label{margin:0 0 8px;color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.hero-panel h2{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.25}
+.hero-panel>p:not(.hero-panel-label){margin:0;color:var(--mut);font-size:14px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.hero-stat{padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}
+.hero-stat strong{display:block;color:var(--fg);font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.2}
+.hero-stat span{color:var(--mut);font-size:12px}
+.btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 18px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--fg);font-weight:650;font-size:14px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);border-color:#c9c1f5;box-shadow:0 7px 18px rgba(42,35,94,.08);color:var(--fg)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 8px 18px rgba(96,70,216,.2)}
+.btn.p:hover{background:var(--acc-dark);border-color:var(--acc-dark);color:#fff}
+section{padding:76px 0}
+section:nth-of-type(even){background:var(--surface)}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.2;letter-spacing:-.035em;margin:0 0 8px}
+.sub{color:var(--mut);margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:24px;display:flex;flex-direction:column;transition:transform .22s,border-color .22s,box-shadow .22s}
+.card:hover{transform:translateY(-4px);border-color:#d1cafa;box-shadow:0 14px 32px rgba(31,38,64,.08)}
+.card h3{margin:0 0 9px;font-size:19px;letter-spacing:-.02em}
+.card p{margin:0 0 18px;color:var(--mut);font-size:14px;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.chip{font-size:12px;padding:4px 10px;border-radius:99px;background:var(--tint);color:#5140bd;font-weight:550}
+.links{display:flex;flex-wrap:wrap;gap:16px}
+.links a{font-size:13px;font-weight:700}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.skills h4{margin:0 0 14px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
+.list{list-style:none;padding:0;margin:0;max-width:850px}
+.list li{position:relative;padding:16px 18px 16px 25px;border-bottom:1px solid var(--line)}
+.list li:before{position:absolute;left:2px;top:27px;width:8px;height:8px;border:2px solid var(--acc);border-radius:50%;content:""}
+.list li:last-child{border:0}
+.list small{color:var(--mut)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px}
+.about p{margin:0;color:var(--mut)}
+section#contact{background:#f5f3ff}
+#contact .sub{max-width:660px}
+dialog{border:1px solid var(--line);border-radius:18px;background:#fff;color:var(--fg);max-width:760px;width:calc(100% - 24px);max-height:90vh;padding:0;box-shadow:0 24px 80px rgba(23,32,51,.2)}
+dialog::backdrop{background:rgba(23,32,51,.42);backdrop-filter:blur(3px)}
+.mh{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff}
+.mh .btn{min-height:38px;padding:7px 12px;font-size:12px}
+.rb{padding:8px 30px 30px}.rb h2{font-size:26px;text-align:center;color:var(--acc);margin-top:14px}.rb h4{margin:18px 0 6px;color:var(--acc);text-transform:uppercase;font-size:13px;letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:3px}
+.rb p,.rb li{font-size:14px;margin:3px 0}.rb ul{padding-left:18px;margin:2px 0 8px}.rb .c{text-align:center;color:var(--mut)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px;text-align:center;background:#fff}
+@media(max-width:760px){.hero{padding:76px 0 66px}.hero-grid{grid-template-columns:1fr;gap:36px}.hero-panel{max-width:460px}.about{grid-template-columns:1fr;gap:12px}}
+@media(max-width:620px){.wrap{padding:0 20px}nav .wrap{min-height:62px;align-items:flex-start;flex-direction:column;gap:2px;padding-top:10px;padding-bottom:8px}nav div{display:flex;width:100%;gap:19px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav div::-webkit-scrollbar{display:none}nav div a{margin:0;font-size:12px}.hero{padding:58px 0 54px}h1{font-size:clamp(40px,12vw,58px)}.lead{font-size:16px}.hero-panel{padding:23px}section{padding:58px 0}h2{font-size:30px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.mh{align-items:flex-start}.rb{padding:8px 20px 24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Rujuta P.</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a><a href="#" onclick="openR();return false">Resume</a></div></div></nav>
+
+<header class="hero"><div class="wrap hero-grid"><div>
+<span class="tag">Open to internships · Pune, India</span>
+<h1>Hi, I'm Rujuta.<br>I build <span>full-stack &amp; AI</span> products.</h1>
+<p class="lead">Third-year Computer Science &amp; Engineering student who turns ideas into thoughtful, user-centered software — from React front-ends and Node/FastAPI back-ends to LLM-powered workflows.</p>
+<div class="btns"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#" onclick="openR();return false">Resume</a><a class="btn" href="https://github.com/rujutaphaltankar">GitHub</a><a class="btn" href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a></div>
+</div><aside class="hero-panel"><p class="hero-panel-label">A little about my work</p><h2>Curious by nature.<br>Builder by choice.</h2><p>I enjoy turning complex ideas into clear, useful products — especially where AI meets thoughtful engineering.</p><div class="hero-stats"><div class="hero-stat"><strong>8+</strong><span>Projects built</span></div><div class="hero-stat"><strong>8.6</strong><span>University CGPA</span></div></div></aside>
+</div></header>
+
+<section id="about"><div class="wrap">
+<h2>About</h2><p class="sub">Learn → Build → Experiment → Debug → Improve → Ship</p>
+<div class="about">
+<p>I'm a B.Tech Computer Science &amp; Engineering student at DES Pune University (2024–2028) with a CGPA of 8.6. I love building practical products where software engineering, product thinking and generative AI meet.</p>
+<p>Right now I'm going deeper into LLM applications, RAG systems, AWS and cloud, backend architecture and system design — and I'm a member of my university's AWS Club. Outside code, I dance (winner, Indigo Saga Dance Competition, Mood Indigo 2025) and love to travel.</p>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2><p class="sub">Selected work, built end to end.</p>
+<div class="grid">
+<div class="card"><h3>Wander</h3><p>AI-powered city travel planner. Discover attractions and restaurants by budget and auto-generate day-by-day itineraries. Full-stack with Docker Compose, CI and thorough docs.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Prisma</span><span class="chip">Anthropic API</span></div><div class="links"><a href="https://wander-gray.vercel.app/">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/Wander">Code ↗</a></div></div>
+<div class="card"><h3>MindMate</h3><p>Privacy-conscious mental wellness platform with mood tracking, private journaling, non-clinical AI reflection, an empathetic AI companion and meditation tools.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">AI APIs</span></div><div class="links"><a href="https://mind-mate-rujuta1.vercel.app">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/MindMate">Code ↗</a></div></div>
+<div class="card"><h3>SpendWise AI</h3><p>Personal finance intelligence: natural-language expense entry, receipt OCR, budgets, spending prediction and anomaly detection through a Python ML service.</p><div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">FastAPI</span><span class="chip">scikit-learn</span></div><div class="links"><a href="https://spend-wise-ai-tau.vercel.app/">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/SpendWise-AI">Code ↗</a></div></div>
+<div class="card"><h3>Samarth-AI</h3><p>RAG-based recommendation system that helps people in India discover disability and government schemes they're eligible for.</p><div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Pinecone</span><span class="chip">Groq</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/Samarth-AI">Code ↗</a></div></div>
+<div class="card"><h3>DevPilot AI</h3><p>Developer productivity platform with authenticated API, persistent data and Claude-powered assistance.</p><div class="chips"><span class="chip">FastAPI</span><span class="chip">SQLAlchemy</span><span class="chip">React 19</span><span class="chip">Tailwind</span><span class="chip">JWT</span></div></div>
+<div class="card"><h3>Meet Live Summarizer</h3><p>Chrome extension that produces a running, bullet-pointed summary of a Google Meet call right on screen.</p><div class="chips"><span class="chip">JavaScript</span><span class="chip">Chrome Extension APIs</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/meet-live-summarizer">Code ↗</a></div></div>
+<div class="card"><h3>Career Forge</h3><p>AI career intelligence and simulation platform with a provider-agnostic OpenAI/Gemini layer.</p><div class="chips"><span class="chip">React</span><span class="chip">FastAPI</span><span class="chip">Firebase</span><span class="chip">Tailwind</span></div></div>
+<div class="card"><h3>Hostel Management</h3><p>System for student records, room allocation, rent collection and expense tracking.</p><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/hostel_management">Code ↗</a></div></div>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2><p class="sub">What I work with.</p>
+<div class="skills">
+<div class="card"><h4>Languages</h4><div class="chips"><span class="chip">Java</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">SQL</span></div></div>
+<div class="card"><h4>Web &amp; Full-Stack</h4><div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">FastAPI</span></div></div>
+<div class="card"><h4>Data &amp; Tools</h4><div class="chips"><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Prisma</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Figma</span></div></div>
+<div class="card"><h4>AI</h4><div class="chips"><span class="chip">LLM APIs</span><span class="chip">RAG</span><span class="chip">Embeddings</span><span class="chip">Vector search</span><span class="chip">Prompt engineering</span></div></div>
+</div></div></section>
+
+<section id="journey"><div class="wrap">
+<h2>Journey</h2><p class="sub">Education, credentials and community.</p>
+<ul class="list">
+<li><b>B.Tech, Computer Science &amp; Engineering</b> — DES Pune University<br><small>2024–2028 · CGPA 8.6</small></li>
+<li><b>AWS Prompt Engineering certification</b><br><small>June 2026</small></li>
+<li><b>AWS Club member</b> — DES Pune University<br><small>Cloud community at university</small></li>
+<li><b>Hackathons &amp; volunteering</b><br><small>Pragyantra 2026 participant · IEEE ETFI-2026 volunteer</small></li>
+<li><b>Indigo Saga Dance Competition winner</b> — Mood Indigo 2025<br><small>Also performed in Firodia Karandak 2025</small></li>
+</ul></div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Let's connect</h2><p class="sub">Looking for software engineering and web development internships. I'd love to hear from you.</p>
+<div class="btns"><a class="btn p" href="mailto:rujuta.phaltankar@gmail.com">Email me</a><a class="btn" href="#" onclick="openR();return false">Resume</a><a class="btn" href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a><a class="btn" href="https://github.com/rujutaphaltankar">GitHub</a></div>
+</div></section>
+
+<footer>© 2026 Rujuta Phaltankar · Built with care in Pune</footer>
+<dialog id="rd"><div class="mh"><b>Resume</b><div><a class="btn p" href="Rujuta_Phaltankar_Resume.pdf" download>Download PDF</a> <a class="btn" href="Rujuta_Phaltankar_Resume.docx" download>Download Word</a> <button class="btn" onclick="rd.close()">Close</button></div></div>
+<div class="rb"><h2>Rujuta Phaltankar</h2><p class="c">Full-Stack &amp; AI Developer · CSE Student · Pune, Maharashtra<br>rujuta.phaltankar@gmail.com · <a href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a> · <a href="https://github.com/rujutaphaltankar">GitHub</a></p>
+<h4>Summary</h4><p>Third-year CSE student who ships end-to-end products: React/TypeScript front-ends, Node.js and FastAPI back-ends, and LLM-powered features with safety and testing built in. Seeking software engineering / web development internships.</p>
+<h4>Education</h4><p><b>DES Pune University</b> — B.Tech, Computer Science &amp; Engineering · 2024–2028 · CGPA 8.6</p>
+<h4>Projects</h4>
+<p><b>Wander</b> — AI travel planner · React, TypeScript, Node.js, Prisma · <a href="https://wander-gray.vercel.app/">Live</a></p><ul><li>LLM-generated day-by-day itineraries, budget-aware discovery, maps, reviews, weather, JWT auth, admin tools.</li><li>Docker Compose, GitHub Actions CI, Jest/Supertest tests.</li></ul>
+<p><b>MindMate AI</b> — wellness platform · React, Flask, MongoDB · <a href="https://mind-mate-rujuta1.vercel.app">Live</a></p><ul><li>Mood tracking, journaling, streaming AI companion, anonymous community.</li><li>Dual-layer crisis-safety classifier, consent-gated AI, token revocation, data export/deletion.</li></ul>
+<p><b>SpendWise AI</b> — finance intelligence · React, Node.js, MongoDB, FastAPI · <a href="https://spend-wise-ai-tau.vercel.app/">Live</a></p><ul><li>NL expense entry, receipt OCR, spending prediction, anomaly detection (median/MAD).</li><li>Deterministic numbers, LLM only explains; 89 backend + 10 ML tests.</li></ul>
+<p><b>Samarth-AI</b> — RAG scheme discovery · React, Node.js, MongoDB, Pinecone, Groq</p>
+<p><b>DevPilot AI</b> — developer productivity platform · FastAPI, React 19, TypeScript</p>
+<h4>Skills</h4><p><b>Languages:</b> Java, C++, Python, JavaScript, TypeScript, SQL<br><b>Web &amp; Backend:</b> React, Vite, Tailwind, Node.js, Express, FastAPI, Flask<br><b>Data &amp; Cloud:</b> MongoDB, PostgreSQL, SQLite, Prisma, AWS, Docker, Git<br><b>AI:</b> LLM APIs, RAG, embeddings, vector search, prompt engineering</p>
+<h4>Certifications &amp; Activities</h4><ul><li>AWS Prompt Engineering certification (June 2026) · AWS Club member</li><li>Pragyantra 2026 hackathon · IEEE ETFI-2026 volunteer</li><li>Winner, Indigo Saga Dance Competition, Mood Indigo 2025</li></ul></div></dialog>
+<script>var rd=document.getElementById('rd');function openR(){rd.showModal()}rd.addEventListener('click',function(e){if(e.target===rd)rd.close()})</script>
+</body>
+</html>
