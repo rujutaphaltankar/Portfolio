@@ -26,6 +26,18 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 50;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), #9984ed, var(--accent));
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
 body {
   margin: 0;
   background:
@@ -160,19 +172,33 @@ nav .nav-links a:hover { color: var(--primary-2); }
   box-shadow: 0 0 0 5px rgba(44,169,120,0.1);
 }
 
+.hero-copy {
+  position: relative;
+}
+.hero-label {
+  margin: 0.85rem 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
 h1 {
-  margin: 1.2rem 0 1rem;
+  margin: 0.5rem 0 0.9rem;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.3rem, 6vw, 5.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.07em;
+  font-size: clamp(4rem, 7vw, 6.6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
   color: var(--fg);
+  font-weight: 600;
 }
 h1 span {
+  display: block;
   color: var(--primary-2);
 }
 .lead {
-  max-width: 610px;
+  max-width: 620px;
   margin: 0;
   font-size: 1.12rem;
   color: var(--muted);
@@ -301,6 +327,78 @@ h1 span {
   color: var(--muted);
   font-size: 0.72rem;
 }
+.build-loop {
+  margin-top: 1.35rem;
+  padding: 1rem 0.9rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(250, 248, 255, 0.72);
+}
+.build-loop-label {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.build-loop-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.35rem;
+}
+.build-loop-track::before,
+.build-loop-track::after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 17%;
+  right: 17%;
+  height: 2px;
+  border-radius: 2px;
+}
+.build-loop-track::before {
+  background: rgba(105, 87, 216, 0.16);
+}
+.build-loop-track::after {
+  right: auto;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary), #9a83f2);
+  animation: loop-progress 3.8s ease-in-out infinite;
+}
+.build-step {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  color: var(--muted);
+  font-size: 0.69rem;
+  font-weight: 700;
+}
+.build-step i {
+  display: block;
+  width: 27px;
+  height: 27px;
+  border: 1px solid rgba(105, 87, 216, 0.18);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(105, 87, 216, 0.05);
+}
+.build-step:nth-child(1) i { animation: step-pulse 3.8s ease-in-out infinite; }
+.build-step:nth-child(2) i { animation: step-pulse 3.8s 1.2s ease-in-out infinite; }
+.build-step:nth-child(3) i { animation: step-pulse 3.8s 2.4s ease-in-out infinite; }
+
+@keyframes loop-progress {
+  0%, 8% { left: 17%; width: 0; }
+  42%, 58% { left: 17%; width: 33%; }
+  92%, 100% { left: 17%; width: 66%; }
+}
+@keyframes step-pulse {
+  0%, 25%, 100% { background: #fff; box-shadow: 0 0 0 4px rgba(105, 87, 216, 0.05); }
+  12% { background: #ded8ff; box-shadow: 0 0 0 6px rgba(105, 87, 216, 0.12); }
+}
 
 section {
   padding: 82px 0;
@@ -356,6 +454,12 @@ section:nth-of-type(even) {
   border-radius: 18px;
   padding: 1.35rem;
   box-shadow: 0 18px 32px rgba(33, 32, 37, 0.04);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+.focus-card:hover, .project-card:hover, .skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(105, 87, 216, 0.2);
+  box-shadow: 0 24px 42px rgba(33, 32, 37, 0.09);
 }
 .focus-card h3, .project-card h3, .skill-card h3 {
   margin: 0.3rem 0 0.5rem;
@@ -384,6 +488,49 @@ section:nth-of-type(even) {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+.project-card[hidden] { display: none; }
+.project-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 0.75rem;
+}
+.project-filter button {
+  min-height: 40px;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.72);
+  color: var(--muted);
+  font-size: 0.79rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.project-filter button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(105,87,216,0.28);
+  color: var(--primary-2);
+}
+.project-filter button[aria-pressed="true"] {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: #fff;
+}
+.project-count {
+  min-height: 1.5em;
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.project-card.filter-in {
+  animation: project-filter-in 360ms ease both;
+}
+@keyframes project-filter-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 .project-card > p {
   flex: 1;
@@ -551,6 +698,33 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+.hero.is-visible .hero-copy > * {
+  animation: hero-enter 680ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero.is-visible .hero-copy > *:nth-child(1) { animation-delay: 80ms; }
+.hero.is-visible .hero-copy > *:nth-child(2) { animation-delay: 160ms; }
+.hero.is-visible .hero-copy > *:nth-child(3) { animation-delay: 240ms; }
+.hero.is-visible .hero-copy > *:nth-child(4) { animation-delay: 340ms; }
+.hero.is-visible .hero-copy > *:nth-child(5) { animation-delay: 440ms; }
+.hero.is-visible .hero-copy > *:nth-child(6) { animation-delay: 520ms; }
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.focus-grid .reveal,
+.project-grid .reveal,
+.skill-grid .reveal {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.focus-grid > :nth-child(2),
+.project-grid > :nth-child(2),
+.skill-grid > :nth-child(2) { --reveal-delay: 90ms; }
+.focus-grid > :nth-child(3),
+.project-grid > :nth-child(3),
+.skill-grid > :nth-child(3) { --reveal-delay: 180ms; }
+.focus-grid > :nth-child(4),
+.project-grid > :nth-child(4),
+.skill-grid > :nth-child(4) { --reveal-delay: 270ms; }
 
 @media (max-width: 820px) {
   .hero-grid,
@@ -585,9 +759,13 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
   .reveal {
     opacity: 1;
     transform: none;
+  }
+  .hero.is-visible .hero-copy > * {
+    animation: none;
   }
 }
 </style>
@@ -612,8 +790,11 @@ footer {
 
 <header class="hero reveal">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
+      <span class="tag">Pune, India</span>
+      <p class="hero-label">Computer Science student · Product-minded builder</p>
       <h1>Rujuta <span>Phaltankar</span></h1>
+      <p class="lead">I design and build thoughtful digital products with a sharp eye for usability, backend reliability, and practical AI experiences.</p>
 
       <div class="btns">
         <a class="btn primary" href="#projects">Explore projects</a>
@@ -649,6 +830,15 @@ footer {
         <div class="hero-stat">
           <strong>3+</strong>
           <span>Core stacks</span>
+        </div>
+      </div>
+
+      <div class="build-loop" role="img" aria-label="My build loop: ideate, build, improve">
+        <p class="build-loop-label">My build loop</p>
+        <div class="build-loop-track" aria-hidden="true">
+          <span class="build-step"><i></i>Ideate</span>
+          <span class="build-step"><i></i>Build</span>
+          <span class="build-step"><i></i>Improve</span>
         </div>
       </div>
     </aside>
@@ -713,11 +903,19 @@ footer {
   <div class="wrap">
     <div class="section-head reveal">
       <h2>Featured work</h2>
-      <p>A few products I’ve built end-to-end with a focus on clarity and real impact.</p>
+      <p>Browse by the kind of problem you want to explore.</p>
     </div>
 
-    <div class="project-grid">
-      <article class="project-card reveal">
+    <div class="project-filter" role="group" aria-label="Filter projects by focus">
+      <button type="button" data-project-filter="all" aria-pressed="true">All work</button>
+      <button type="button" data-project-filter="ai" aria-pressed="false">AI &amp; data</button>
+      <button type="button" data-project-filter="product" aria-pressed="false">Product experiences</button>
+      <button type="button" data-project-filter="tools" aria-pressed="false">Tools &amp; systems</button>
+    </div>
+    <p class="project-count" id="project-count" aria-live="polite">Showing all projects</p>
+
+    <div class="project-grid" id="project-grid">
+      <article class="project-card reveal" data-category="ai product">
         <h3>Wander</h3>
         <p>AI-powered city travel planner that suggests attractions, meals, and personalized day-by-day itineraries based on budget and interests.</p>
         <div class="chips">
@@ -733,7 +931,7 @@ footer {
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="ai product">
         <h3>MindMate</h3>
         <p>Privacy-conscious mental wellness platform with journaling, mood tracking, reflection prompts, and empathetic AI support.</p>
         <div class="chips">
@@ -748,7 +946,7 @@ footer {
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="ai">
         <h3>SpendWise AI</h3>
         <p>Expense intelligence app that leverages natural language input, receipt scanning, and predictive analytics to improve personal finance decisions.</p>
         <div class="chips">
@@ -763,7 +961,7 @@ footer {
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="ai">
         <h3>Samarth-AI</h3>
         <p>RAG-based recommendation system helping people discover relevant disability and government schemes they may be eligible for.</p>
         <div class="chips">
@@ -778,7 +976,7 @@ footer {
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="tools">
         <h3>DevPilot AI</h3>
         <p>Developer productivity platform built with an authenticated API and AI assistance for day-to-day coding workflows.</p>
         <div class="chips">
@@ -790,7 +988,7 @@ footer {
         </div>
       </article>
 
-      <article class="project-card reveal">
+      <article class="project-card reveal" data-category="tools">
         <h3>Meet Live Summarizer</h3>
         <p>Chrome extension that generates live meeting summaries in real time, helping users capture key discussion points quickly.</p>
         <div class="chips">
@@ -992,6 +1190,48 @@ footer {
       item.classList.add('is-visible');
     });
   }
+
+  var updateScrollProgress = function () {
+    var scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+    document.documentElement.style.setProperty('--scroll-progress', String(progress));
+  };
+  updateScrollProgress();
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  window.addEventListener('resize', updateScrollProgress);
+
+  var projectFilters = document.querySelectorAll('[data-project-filter]');
+  var projectCards = document.querySelectorAll('#project-grid .project-card');
+  var projectCount = document.getElementById('project-count');
+
+  projectFilters.forEach(function (filter) {
+    filter.addEventListener('click', function () {
+      var selectedCategory = filter.getAttribute('data-project-filter');
+      var visibleCount = 0;
+
+      projectFilters.forEach(function (button) {
+        button.setAttribute('aria-pressed', String(button === filter));
+      });
+
+      projectCards.forEach(function (card) {
+        var categories = card.getAttribute('data-category').split(' ');
+        var shouldShow = selectedCategory === 'all' || categories.indexOf(selectedCategory) !== -1;
+        card.hidden = !shouldShow;
+        card.classList.remove('filter-in');
+
+        if (shouldShow) {
+          visibleCount += 1;
+          requestAnimationFrame(function () {
+            card.classList.add('filter-in');
+          });
+        }
+      });
+
+      projectCount.textContent = selectedCategory === 'all'
+        ? 'Showing all ' + visibleCount + ' projects'
+        : 'Showing ' + visibleCount + ' ' + filter.textContent.trim() + ' projects';
+    });
+  });
 
   document.addEventListener('click', function (event) {
     if (event.target === rd) {
