@@ -3,147 +3,953 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Rujuta Phaltankar — Full-Stack & AI Developer</title>
+<title>Rujuta Phaltankar | Full-Stack & AI Developer</title>
 <style>
-:root{color-scheme:light;--bg:#fff;--surface:#f7f8fc;--fg:#172033;--mut:#647087;--line:#e5e9f1;--acc:#6046d8;--acc-dark:#4932bd;--tint:#f0edff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:78px}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--acc);text-decoration:none}
-a:hover{color:var(--acc-dark)}
-a:focus-visible,button:focus-visible{outline:3px solid #a99af7;outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-nav{position:sticky;top:env(safe-area-inset-top,0px);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:5}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:68px}
-nav b{font-family:Georgia,"Times New Roman",serif;font-size:21px;letter-spacing:-.04em}
-nav div a{display:inline-block;margin-left:24px;color:var(--mut);font-size:14px;font-weight:550;transition:color .2s}
-nav div a:hover{color:var(--acc)}
-.hero{position:relative;overflow:hidden;padding:104px 0 88px;background:radial-gradient(ellipse at 82% 18%,#f1eeff 0,rgba(241,238,255,0) 36%),linear-gradient(180deg,#fff 0%,#fcfbff 100%);border-bottom:1px solid var(--line)}
-.hero:before{position:absolute;right:-170px;bottom:-310px;width:550px;height:550px;border:1px solid rgba(96,70,216,.1);border-radius:50%;content:""}
-.hero:after{position:absolute;right:-95px;bottom:-235px;width:400px;height:400px;border:1px solid rgba(96,70,216,.1);border-radius:50%;content:""}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,.7fr);align-items:center;gap:60px}
-.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #e7e2ff;background:#fff;padding:6px 13px;border-radius:99px;font-size:13px;color:#51439a;font-weight:600}
-.tag:before{width:8px;height:8px;border-radius:50%;background:#30b47a;box-shadow:0 0 0 4px #e8f8f0;content:""}
-h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,6.5vw,72px);line-height:1.04;letter-spacing:-.055em;margin:22px 0 18px}
-h1 span{color:var(--acc)}
-.lead{font-size:18px;color:var(--mut);max-width:620px;line-height:1.75}
-.hero-panel{position:relative;padding:30px;border:1px solid #e9e5fa;border-radius:22px;background:rgba(255,255,255,.82);box-shadow:0 22px 60px rgba(42,35,94,.09);backdrop-filter:blur(8px)}
-.hero-panel-label{margin:0 0 8px;color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.hero-panel h2{margin:0 0 8px;font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.25}
-.hero-panel>p:not(.hero-panel-label){margin:0;color:var(--mut);font-size:14px}
-.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-.hero-stat{padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}
-.hero-stat strong{display:block;color:var(--fg);font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.2}
-.hero-stat span{color:var(--mut);font-size:12px}
-.btns{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 18px;border-radius:11px;border:1px solid var(--line);background:#fff;color:var(--fg);font-weight:650;font-size:14px;transition:transform .2s,border-color .2s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px);border-color:#c9c1f5;box-shadow:0 7px 18px rgba(42,35,94,.08);color:var(--fg)}
-.btn.p{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 8px 18px rgba(96,70,216,.2)}
-.btn.p:hover{background:var(--acc-dark);border-color:var(--acc-dark);color:#fff}
-section{padding:76px 0}
-section:nth-of-type(even){background:var(--surface)}
-h2{font-family:Georgia,"Times New Roman",serif;font-size:34px;line-height:1.2;letter-spacing:-.035em;margin:0 0 8px}
-.sub{color:var(--mut);margin:0 0 30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:24px;display:flex;flex-direction:column;transition:transform .22s,border-color .22s,box-shadow .22s}
-.card:hover{transform:translateY(-4px);border-color:#d1cafa;box-shadow:0 14px 32px rgba(31,38,64,.08)}
-.card h3{margin:0 0 9px;font-size:19px;letter-spacing:-.02em}
-.card p{margin:0 0 18px;color:var(--mut);font-size:14px;flex:1}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
-.chip{font-size:12px;padding:4px 10px;border-radius:99px;background:var(--tint);color:#5140bd;font-weight:550}
-.links{display:flex;flex-wrap:wrap;gap:16px}
-.links a{font-size:13px;font-weight:700}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.skills h4{margin:0 0 14px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--mut)}
-.list{list-style:none;padding:0;margin:0;max-width:850px}
-.list li{position:relative;padding:16px 18px 16px 25px;border-bottom:1px solid var(--line)}
-.list li:before{position:absolute;left:2px;top:27px;width:8px;height:8px;border:2px solid var(--acc);border-radius:50%;content:""}
-.list li:last-child{border:0}
-.list small{color:var(--mut)}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px}
-.about p{margin:0;color:var(--mut)}
-section#contact{background:#f5f3ff}
-#contact .sub{max-width:660px}
-dialog{border:1px solid var(--line);border-radius:18px;background:#fff;color:var(--fg);max-width:760px;width:calc(100% - 24px);max-height:90vh;padding:0;box-shadow:0 24px 80px rgba(23,32,51,.2)}
-dialog::backdrop{background:rgba(23,32,51,.42);backdrop-filter:blur(3px)}
-.mh{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff}
-.mh .btn{min-height:38px;padding:7px 12px;font-size:12px}
-.rb{padding:8px 30px 30px}.rb h2{font-size:26px;text-align:center;color:var(--acc);margin-top:14px}.rb h4{margin:18px 0 6px;color:var(--acc);text-transform:uppercase;font-size:13px;letter-spacing:.06em;border-bottom:1px solid var(--line);padding-bottom:3px}
-.rb p,.rb li{font-size:14px;margin:3px 0}.rb ul{padding-left:18px;margin:2px 0 8px}.rb .c{text-align:center;color:var(--mut)}
-footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:13px;text-align:center;background:#fff}
-@media(max-width:760px){.hero{padding:76px 0 66px}.hero-grid{grid-template-columns:1fr;gap:36px}.hero-panel{max-width:460px}.about{grid-template-columns:1fr;gap:12px}}
-@media(max-width:620px){.wrap{padding:0 20px}nav .wrap{min-height:62px;align-items:flex-start;flex-direction:column;gap:2px;padding-top:10px;padding-bottom:8px}nav div{display:flex;width:100%;gap:19px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}nav div::-webkit-scrollbar{display:none}nav div a{margin:0;font-size:12px}.hero{padding:58px 0 54px}h1{font-size:clamp(40px,12vw,58px)}.lead{font-size:16px}.hero-panel{padding:23px}section{padding:58px 0}h2{font-size:30px}.grid,.skills{grid-template-columns:1fr}.card{padding:21px}.mh{align-items:flex-start}.rb{padding:8px 20px 24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+:root {
+  color-scheme: light;
+  --bg: #f7f8fc;
+  --bg-strong: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f3f5ff;
+  --fg: #14213d;
+  --muted: #5d6b82;
+  --line: #e6ebf5;
+  --primary: #5a4bd6;
+  --primary-deep: #4737ba;
+  --primary-soft: #efebff;
+  --success: #1d9b71;
+  --shadow: 0 18px 42px rgba(28, 38, 62, 0.09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #fafbff 0%, #f7f8fc 100%);
+  color: var(--fg);
+  font: 16px/1.7 "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { color: var(--primary-deep); }
+a:focus-visible, button:focus-visible { outline: 3px solid rgba(90, 75, 214, 0.25); outline-offset: 3px; }
+
+img { max-width: 100%; display: block; }
+button { font: inherit; }
+.wrap {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(230, 235, 245, 0.9);
+}
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+}
+.brand {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+}
+nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  flex-wrap: wrap;
+}
+nav .nav-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .nav-links a:hover { color: var(--primary); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 84px;
+  background:
+    radial-gradient(circle at top right, rgba(106, 90, 218, 0.12), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f9f8ff 100%);
+  border-bottom: 1px solid var(--line);
+}
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(90, 75, 214, 0.08);
+}
+.hero::before {
+  width: 480px;
+  height: 480px;
+  right: -110px;
+  bottom: -180px;
+}
+.hero::after {
+  width: 300px;
+  height: 300px;
+  right: 50px;
+  bottom: -90px;
+}
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.78fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.52rem 0.95rem;
+  border: 1px solid rgba(90, 75, 214, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.tag::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 5px rgba(29, 155, 113, 0.1);
+}
+
+h1 {
+  margin: 1.2rem 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+h1 span {
+  color: var(--primary);
+}
+.lead {
+  font-size: 1.12rem;
+  max-width: 620px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.78rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(18, 25, 41, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(35, 43, 70, 0.08);
+  border-color: rgba(90, 75, 214, 0.3);
+}
+.btn.primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn.primary:hover {
+  background: var(--primary-deep);
+  border-color: var(--primary-deep);
+  color: #fff;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.8);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 0.7rem;
+}
+.meta-row strong {
+  color: var(--fg);
+}
+
+.hero-panel {
+  position: relative;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(90, 75, 214, 0.12);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.6rem;
+}
+.hero-panel .eyebrow {
+  margin: 0 0 0.8rem;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+.hero-panel h2 {
+  margin: 0 0 0.8rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+.hero-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+.stack-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.stack-badges span {
+  background: var(--primary-soft);
+  color: var(--primary);
+  border: 1px solid rgba(90, 75, 214, 0.12);
+  border-radius: 999px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+.hero-stat {
+  background: #f9f9ff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+.hero-stat strong {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--fg);
+}
+.hero-stat span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+section {
+  padding: 82px 0;
+}
+section:nth-of-type(even) {
+  background: rgba(255,255,255,0.55);
+}
+.section-head {
+  margin-bottom: 2rem;
+}
+.section-head h2 {
+  margin: 0 0 0.45rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: -0.05em;
+}
+.section-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.4rem;
+}
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(22, 34, 57, 0.04);
+}
+.about-card p,
+.about-card li {
+  color: var(--muted);
+}
+.about-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.focus-grid,
+.project-grid,
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.focus-card, .project-card, .skill-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.35rem;
+  box-shadow: 0 14px 28px rgba(18, 25, 41, 0.04);
+}
+.focus-card h3, .project-card h3, .skill-card h3 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.22rem;
+  letter-spacing: -0.03em;
+}
+.focus-card p, .project-card p, .skill-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.focus-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.project-card > p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  background: var(--primary-soft);
+  border: 1px solid rgba(90, 75, 214, 0.08);
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.project-links a {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.skill-card h4 {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+.skill-card .chips {
+  margin: 0;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 920px;
+  border-left: 2px solid var(--line);
+}
+.timeline li {
+  position: relative;
+  margin: 0 0 1.25rem 1.15rem;
+  padding: 0 0 0 1.1rem;
+}
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.46rem;
+  top: 0.36rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px rgba(90, 75, 214, 0.18);
+}
+.timeline b {
+  font-size: 1.03rem;
+}
+.timeline small {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+}
+
+.contact-wrap {
+  background: linear-gradient(135deg, rgba(90, 75, 214, 0.06), rgba(255,255,255,0.8));
+  border: 1px solid rgba(90, 75, 214, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+}
+.contact-actions {
+  margin-top: 1.3rem;
+}
+
+footer {
+  padding: 1.5rem 0 2.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  border-top: 1px solid var(--line);
+  background: rgba(255,255,255,0.8);
+}
+
+.dialog-shell {
+  width: min(860px, calc(100% - 24px));
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 28px 70px rgba(13, 20, 35, 0.18);
+}
+.dialog-shell::backdrop {
+  background: rgba(11, 18, 31, 0.46);
+  backdrop-filter: blur(2px);
+}
+.resume-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  background: #fff;
+}
+.resume-head strong {
+  font-size: 1rem;
+}
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.resume-body {
+  padding: 1.2rem 1.4rem 1.5rem;
+}
+.resume-body h2 {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  color: var(--primary);
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+}
+.resume-body .meta {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+.resume-body h4 {
+  margin: 1.35rem 0 0.35rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--primary);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.resume-body p,
+.resume-body li {
+  color: var(--fg);
+  font-size: 0.9rem;
+}
+.resume-body ul {
+  margin: 0.35rem 0 0.85rem;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 820px) {
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-panel {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 640px) {
+  nav .wrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 88px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  nav .nav-links {
+    gap: 0.85rem 1rem;
+  }
+  .wrap {
+    width: min(1120px, calc(100% - 24px));
+  }
+  h1 { line-height: 1.02; }
+  .hero { padding-top: 72px; }
+  .contact-wrap { padding: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition: none !important;
+  }
+}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>Rujuta P.</b><div><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a><a href="#" onclick="openR();return false">Resume</a></div></div></nav>
+<nav>
+  <div class="wrap">
+    <div class="brand">Rujuta P.</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="#" onclick="openR(); return false;">Resume</a>
+    </div>
+  </div>
+</nav>
 
-<header class="hero"><div class="wrap hero-grid"><div>
-<span class="tag">Open to internships · Pune, India</span>
-<h1>Hi, I'm Rujuta.<br>I build <span>full-stack &amp; AI</span> products.</h1>
-<p class="lead">Third-year Computer Science &amp; Engineering student who turns ideas into thoughtful, user-centered software — from React front-ends and Node/FastAPI back-ends to LLM-powered workflows.</p>
-<div class="btns"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#" onclick="openR();return false">Resume</a><a class="btn" href="https://github.com/rujutaphaltankar">GitHub</a><a class="btn" href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a></div>
-</div><aside class="hero-panel"><p class="hero-panel-label">A little about my work</p><h2>Curious by nature.<br>Builder by choice.</h2><p>I enjoy turning complex ideas into clear, useful products — especially where AI meets thoughtful engineering.</p><div class="hero-stats"><div class="hero-stat"><strong>8+</strong><span>Projects built</span></div><div class="hero-stat"><strong>8.6</strong><span>University CGPA</span></div></div></aside>
-</div></header>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Open to internships · Pune, India</span>
+      <h1>Full-stack engineer building <span>AI products</span> that feel useful.</h1>
+      <p class="lead">I'm Rujuta Phaltankar, a Computer Science student focused on turning ideas into polished digital products — from responsive frontends and scalable backends to LLM-powered experiences that solve real problems.</p>
 
-<section id="about"><div class="wrap">
-<h2>About</h2><p class="sub">Learn → Build → Experiment → Debug → Improve → Ship</p>
-<div class="about">
-<p>I'm a B.Tech Computer Science &amp; Engineering student at DES Pune University (2024–2028) with a CGPA of 8.6. I love building practical products where software engineering, product thinking and generative AI meet.</p>
-<p>Right now I'm going deeper into LLM applications, RAG systems, AWS and cloud, backend architecture and system design — and I'm a member of my university's AWS Club. Outside code, I dance (winner, Indigo Saga Dance Competition, Mood Indigo 2025) and love to travel.</p>
-</div></div></section>
+      <div class="btns">
+        <a class="btn primary" href="#projects">Explore projects</a>
+        <a class="btn" href="#contact">Let’s connect</a>
+        <a class="btn" href="https://github.com/rujutaphaltankar" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
 
-<section id="projects"><div class="wrap">
-<h2>Projects</h2><p class="sub">Selected work, built end to end.</p>
-<div class="grid">
-<div class="card"><h3>Wander</h3><p>AI-powered city travel planner. Discover attractions and restaurants by budget and auto-generate day-by-day itineraries. Full-stack with Docker Compose, CI and thorough docs.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">Prisma</span><span class="chip">Anthropic API</span></div><div class="links"><a href="https://wander-gray.vercel.app/">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/Wander">Code ↗</a></div></div>
-<div class="card"><h3>MindMate</h3><p>Privacy-conscious mental wellness platform with mood tracking, private journaling, non-clinical AI reflection, an empathetic AI companion and meditation tools.</p><div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span><span class="chip">AI APIs</span></div><div class="links"><a href="https://mind-mate-rujuta1.vercel.app">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/MindMate">Code ↗</a></div></div>
-<div class="card"><h3>SpendWise AI</h3><p>Personal finance intelligence: natural-language expense entry, receipt OCR, budgets, spending prediction and anomaly detection through a Python ML service.</p><div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">FastAPI</span><span class="chip">scikit-learn</span></div><div class="links"><a href="https://spend-wise-ai-tau.vercel.app/">Live demo ↗</a><a href="https://github.com/rujutaphaltankar/SpendWise-AI">Code ↗</a></div></div>
-<div class="card"><h3>Samarth-AI</h3><p>RAG-based recommendation system that helps people in India discover disability and government schemes they're eligible for.</p><div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Pinecone</span><span class="chip">Groq</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/Samarth-AI">Code ↗</a></div></div>
-<div class="card"><h3>DevPilot AI</h3><p>Developer productivity platform with authenticated API, persistent data and Claude-powered assistance.</p><div class="chips"><span class="chip">FastAPI</span><span class="chip">SQLAlchemy</span><span class="chip">React 19</span><span class="chip">Tailwind</span><span class="chip">JWT</span></div></div>
-<div class="card"><h3>Meet Live Summarizer</h3><p>Chrome extension that produces a running, bullet-pointed summary of a Google Meet call right on screen.</p><div class="chips"><span class="chip">JavaScript</span><span class="chip">Chrome Extension APIs</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/meet-live-summarizer">Code ↗</a></div></div>
-<div class="card"><h3>Career Forge</h3><p>AI career intelligence and simulation platform with a provider-agnostic OpenAI/Gemini layer.</p><div class="chips"><span class="chip">React</span><span class="chip">FastAPI</span><span class="chip">Firebase</span><span class="chip">Tailwind</span></div></div>
-<div class="card"><h3>Hostel Management</h3><p>System for student records, room allocation, rent collection and expense tracking.</p><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML</span></div><div class="links"><a href="https://github.com/rujutaphaltankar/hostel_management">Code ↗</a></div></div>
-</div></div></section>
+      <div class="meta-row">
+        <span><strong>8+</strong> product builds</span>
+        <span><strong>CGPA 8.6</strong> in CSE</span>
+        <span><strong>AI + Web</strong> focus</span>
+      </div>
+    </div>
 
-<section id="skills"><div class="wrap">
-<h2>Skills</h2><p class="sub">What I work with.</p>
-<div class="skills">
-<div class="card"><h4>Languages</h4><div class="chips"><span class="chip">Java</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">SQL</span></div></div>
-<div class="card"><h4>Web &amp; Full-Stack</h4><div class="chips"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">Tailwind</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">FastAPI</span></div></div>
-<div class="card"><h4>Data &amp; Tools</h4><div class="chips"><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">Prisma</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Figma</span></div></div>
-<div class="card"><h4>AI</h4><div class="chips"><span class="chip">LLM APIs</span><span class="chip">RAG</span><span class="chip">Embeddings</span><span class="chip">Vector search</span><span class="chip">Prompt engineering</span></div></div>
-</div></div></section>
+    <aside class="hero-panel">
+      <p class="eyebrow">Current focus</p>
+      <h2>Product thinking with engineering depth.</h2>
+      <p>I enjoy building experiences where design clarity, performance, and backend reliability meet practical AI utility.</p>
 
-<section id="journey"><div class="wrap">
-<h2>Journey</h2><p class="sub">Education, credentials and community.</p>
-<ul class="list">
-<li><b>B.Tech, Computer Science &amp; Engineering</b> — DES Pune University<br><small>2024–2028 · CGPA 8.6</small></li>
-<li><b>AWS Prompt Engineering certification</b><br><small>June 2026</small></li>
-<li><b>AWS Club member</b> — DES Pune University<br><small>Cloud community at university</small></li>
-<li><b>Hackathons &amp; volunteering</b><br><small>Pragyantra 2026 participant · IEEE ETFI-2026 volunteer</small></li>
-<li><b>Indigo Saga Dance Competition winner</b> — Mood Indigo 2025<br><small>Also performed in Firodia Karandak 2025</small></li>
-</ul></div></section>
+      <div class="stack-badges">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>FastAPI</span>
+        <span>AWS</span>
+        <span>LLM APIs</span>
+      </div>
 
-<section id="contact"><div class="wrap">
-<h2>Let's connect</h2><p class="sub">Looking for software engineering and web development internships. I'd love to hear from you.</p>
-<div class="btns"><a class="btn p" href="mailto:rujuta.phaltankar@gmail.com">Email me</a><a class="btn" href="#" onclick="openR();return false">Resume</a><a class="btn" href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a><a class="btn" href="https://github.com/rujutaphaltankar">GitHub</a></div>
-</div></section>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong>8+</strong>
+          <span>Projects shipped</span>
+        </div>
+        <div class="hero-stat">
+          <strong>3+</strong>
+          <span>Core stacks</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <p>Curious by nature. Builder by choice.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <p>I'm a B.Tech Computer Science & Engineering student at DES Pune University, pursuing a strong foundation in software engineering, systems thinking, and product development. I enjoy creating things that are not only technically solid, but also genuinely helpful and easy to use.</p>
+      </div>
+      <div class="about-card">
+        <ul>
+          <li>Building end-to-end web products with modern frontend and backend workflows.</li>
+          <li>Exploring LLM applications, RAG systems, prompts, and practical AI workflows.</li>
+          <li>Interested in cloud architecture, clean APIs, and thoughtful UX.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I do best</h2>
+      <p>From concept to deployment, I build with product clarity and engineering discipline.</p>
+    </div>
+
+    <div class="focus-grid">
+      <div class="focus-card">
+        <div class="focus-icon">01</div>
+        <h3>Full-Stack Product Building</h3>
+        <p>I design and implement web applications with polished interfaces, reliable backends, and user-focused workflows.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">02</div>
+        <h3>AI & LLM Integration</h3>
+        <p>I build practical AI experiences, prompt-based workflows, and retrieval-driven features that add real value.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">03</div>
+        <h3>Cloud & Architecture</h3>
+        <p>I work with scalable app patterns, cloud services, and clean system design to support real-world product growth.</p>
+      </div>
+      <div class="focus-card">
+        <div class="focus-icon">04</div>
+        <h3>Problem Solving</h3>
+        <p>I enjoy turning ambiguity into clear implementation plans, testing assumptions, and shipping thoughtful solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected projects</h2>
+      <p>Built end-to-end with a focus on utility, clarity, and real user impact.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <h3>Wander</h3>
+        <p>AI-powered city travel planner that suggests attractions, meals, and personalized day-by-day itineraries based on budget and interests.</p>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Prisma</span>
+          <span class="chip">Anthropic API</span>
+        </div>
+        <div class="project-links">
+          <a href="https://wander-gray.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          <a href="https://github.com/rujutaphaltankar/Wander" target="_blank" rel="noreferrer">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>MindMate</h3>
+        <p>Privacy-conscious mental wellness platform with journaling, mood tracking, reflection prompts, and empathetic AI support.</p>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">AI APIs</span>
+        </div>
+        <div class="project-links">
+          <a href="https://mind-mate-rujuta1.vercel.app" target="_blank" rel="noreferrer">Live demo ↗</a>
+          <a href="https://github.com/rujutaphaltankar/MindMate" target="_blank" rel="noreferrer">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>SpendWise AI</h3>
+        <p>Expense intelligence app that leverages natural language input, receipt scanning, and predictive analytics to improve personal finance decisions.</p>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">scikit-learn</span>
+        </div>
+        <div class="project-links">
+          <a href="https://spend-wise-ai-tau.vercel.app/" target="_blank" rel="noreferrer">Live demo ↗</a>
+          <a href="https://github.com/rujutaphaltankar/SpendWise-AI" target="_blank" rel="noreferrer">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Samarth-AI</h3>
+        <p>RAG-based recommendation system helping people discover relevant disability and government schemes they may be eligible for.</p>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">Pinecone</span>
+          <span class="chip">Groq</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rujutaphaltankar/Samarth-AI" target="_blank" rel="noreferrer">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>DevPilot AI</h3>
+        <p>Developer productivity platform built with an authenticated API and AI assistance for day-to-day coding workflows.</p>
+        <div class="chips">
+          <span class="chip">FastAPI</span>
+          <span class="chip">SQLAlchemy</span>
+          <span class="chip">React 19</span>
+          <span class="chip">Tailwind</span>
+          <span class="chip">JWT</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Meet Live Summarizer</h3>
+        <p>Chrome extension that generates live meeting summaries in real time, helping users capture key discussion points quickly.</p>
+        <div class="chips">
+          <span class="chip">JavaScript</span>
+          <span class="chip">Chrome Extensions</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rujutaphaltankar/meet-live-summarizer" target="_blank" rel="noreferrer">Code ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <p>Tools, languages, and engineering capabilities I work with.</p>
+    </div>
+
+    <div class="skill-grid">
+      <div class="skill-card">
+        <h4>Languages</h4>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">C++</span>
+          <span class="chip">Python</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Web & Full-Stack</h4>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">Vite</span>
+          <span class="chip">Tailwind</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Express</span>
+          <span class="chip">FastAPI</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>Data & Cloud</h4>
+        <div class="chips">
+          <span class="chip">MongoDB</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">SQLite</span>
+          <span class="chip">Prisma</span>
+          <span class="chip">AWS</span>
+          <span class="chip">Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h4>AI</h4>
+        <div class="chips">
+          <span class="chip">LLM APIs</span>
+          <span class="chip">RAG</span>
+          <span class="chip">Embeddings</span>
+          <span class="chip">Vector Search</span>
+          <span class="chip">Prompt Engineering</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Journey</h2>
+      <p>Education, certifications, community involvement, and growth milestones.</p>
+    </div>
+
+    <ul class="timeline">
+      <li>
+        <b>B.Tech in Computer Science & Engineering</b>
+        <small>DES Pune University · 2024–2028 · CGPA 8.6</small>
+      </li>
+      <li>
+        <b>AWS Prompt Engineering Certification</b>
+        <small>June 2026</small>
+      </li>
+      <li>
+        <b>AWS Club Member</b>
+        <small>DES Pune University</small>
+      </li>
+      <li>
+        <b>Hackathons & Volunteering</b>
+        <small>Pragyantra 2026 participant · IEEE ETFI-2026 volunteer</small>
+      </li>
+      <li>
+        <b>Winner — Indigo Saga Dance Competition</b>
+        <small>Mood Indigo 2025</small>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div class="section-head">
+        <h2>Let’s build something impactful.</h2>
+        <p>I'm actively looking for software engineering and web development opportunities where I can contribute, learn, and ship meaningful solutions.</p>
+      </div>
+
+      <div class="btns contact-actions">
+        <a class="btn primary" href="mailto:rujuta.phaltankar@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/rujuta-phaltankar" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/rujutaphaltankar" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn" href="#" onclick="openR(); return false;">Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>© 2026 Rujuta Phaltankar · Built with care in Pune</footer>
-<dialog id="rd"><div class="mh"><b>Resume</b><div><a class="btn p" href="Rujuta_Phaltankar_Resume.pdf" download>Download PDF</a> <a class="btn" href="Rujuta_Phaltankar_Resume.docx" download>Download Word</a> <button class="btn" onclick="rd.close()">Close</button></div></div>
-<div class="rb"><h2>Rujuta Phaltankar</h2><p class="c">Full-Stack &amp; AI Developer · CSE Student · Pune, Maharashtra<br>rujuta.phaltankar@gmail.com · <a href="https://www.linkedin.com/in/rujuta-phaltankar">LinkedIn</a> · <a href="https://github.com/rujutaphaltankar">GitHub</a></p>
-<h4>Summary</h4><p>Third-year CSE student who ships end-to-end products: React/TypeScript front-ends, Node.js and FastAPI back-ends, and LLM-powered features with safety and testing built in. Seeking software engineering / web development internships.</p>
-<h4>Education</h4><p><b>DES Pune University</b> — B.Tech, Computer Science &amp; Engineering · 2024–2028 · CGPA 8.6</p>
-<h4>Projects</h4>
-<p><b>Wander</b> — AI travel planner · React, TypeScript, Node.js, Prisma · <a href="https://wander-gray.vercel.app/">Live</a></p><ul><li>LLM-generated day-by-day itineraries, budget-aware discovery, maps, reviews, weather, JWT auth, admin tools.</li><li>Docker Compose, GitHub Actions CI, Jest/Supertest tests.</li></ul>
-<p><b>MindMate AI</b> — wellness platform · React, Flask, MongoDB · <a href="https://mind-mate-rujuta1.vercel.app">Live</a></p><ul><li>Mood tracking, journaling, streaming AI companion, anonymous community.</li><li>Dual-layer crisis-safety classifier, consent-gated AI, token revocation, data export/deletion.</li></ul>
-<p><b>SpendWise AI</b> — finance intelligence · React, Node.js, MongoDB, FastAPI · <a href="https://spend-wise-ai-tau.vercel.app/">Live</a></p><ul><li>NL expense entry, receipt OCR, spending prediction, anomaly detection (median/MAD).</li><li>Deterministic numbers, LLM only explains; 89 backend + 10 ML tests.</li></ul>
-<p><b>Samarth-AI</b> — RAG scheme discovery · React, Node.js, MongoDB, Pinecone, Groq</p>
-<p><b>DevPilot AI</b> — developer productivity platform · FastAPI, React 19, TypeScript</p>
-<h4>Skills</h4><p><b>Languages:</b> Java, C++, Python, JavaScript, TypeScript, SQL<br><b>Web &amp; Backend:</b> React, Vite, Tailwind, Node.js, Express, FastAPI, Flask<br><b>Data &amp; Cloud:</b> MongoDB, PostgreSQL, SQLite, Prisma, AWS, Docker, Git<br><b>AI:</b> LLM APIs, RAG, embeddings, vector search, prompt engineering</p>
-<h4>Certifications &amp; Activities</h4><ul><li>AWS Prompt Engineering certification (June 2026) · AWS Club member</li><li>Pragyantra 2026 hackathon · IEEE ETFI-2026 volunteer</li><li>Winner, Indigo Saga Dance Competition, Mood Indigo 2025</li></ul></div></dialog>
-<script>var rd=document.getElementById('rd');function openR(){rd.showModal()}rd.addEventListener('click',function(e){if(e.target===rd)rd.close()})</script>
+
+<dialog class="dialog-shell" id="rd">
+  <div class="resume-head">
+    <strong>Resume Snapshot</strong>
+    <div class="resume-actions">
+      <a class="btn primary" href="mailto:rujuta.phaltankar@gmail.com?subject=Request%20resume">Request resume</a>
+      <button class="btn" type="button" onclick="rd.close()">Close</button>
+    </div>
+  </div>
+
+  <div class="resume-body">
+    <h2>Rujuta Phaltankar</h2>
+    <p class="meta">Full-Stack & AI Developer · CSE Student · Pune, Maharashtra<br>rujuta.phaltankar@gmail.com · <a href="https://www.linkedin.com/in/rujuta-phaltankar" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/rujutaphaltankar" target="_blank" rel="noreferrer">GitHub</a></p>
+
+    <h4>Summary</h4>
+    <p>Third-year CSE student focused on building end-to-end web products, scalable backends, and AI-powered features with strong product thinking and implementation discipline. Seeking software engineering and web development internships.</p>
+
+    <h4>Education</h4>
+    <p><b>DES Pune University</b> — B.Tech, Computer Science & Engineering · 2024–2028 · CGPA 8.6</p>
+
+    <h4>Projects</h4>
+    <p><b>Wander</b> — AI travel planner · React, TypeScript, Node.js, Prisma</p>
+    <ul>
+      <li>Created itinerary generation, budget-aware recommendations, and review-focused travel planning.</li>
+      <li>Built with Docker Compose, CI pipelines, and a focus on documentation and maintainability.</li>
+    </ul>
+
+    <p><b>MindMate</b> — AI wellness platform · React, Node.js, MongoDB</p>
+    <ul>
+      <li>Designed journaling, mood tracking, safe AI reflection, and personalized support features.</li>
+      <li>Applied user trust principles such as consent-aware AI behavior and data controls.</li>
+    </ul>
+
+    <p><b>SpendWise AI</b> — finance intelligence · React, FastAPI, MongoDB</p>
+    <ul>
+      <li>Built conversational expense entry, anomaly detection, and spending analysis using ML-driven insights.</li>
+      <li>Balanced AI assistance with deterministic backend logic and testing.</li>
+    </ul>
+
+    <h4>Skills</h4>
+    <p><b>Languages:</b> Java, C++, Python, JavaScript, TypeScript, SQL<br><b>Web & Backend:</b> React, Vite, Tailwind, Node.js, Express, FastAPI, Flask<br><b>Data & Cloud:</b> MongoDB, PostgreSQL, SQLite, Prisma, AWS, Docker, Git<br><b>AI:</b> LLM APIs, RAG, embeddings, vector search, prompt engineering</p>
+
+    <h4>Certifications & Activities</h4>
+    <ul>
+      <li>AWS Prompt Engineering certification (June 2026)</li>
+      <li>AWS Club Member at DES Pune University</li>
+      <li>Pragyantra 2026 participant · IEEE ETFI-2026 volunteer</li>
+      <li>Winner, Indigo Saga Dance Competition, Mood Indigo 2025</li>
+    </ul>
+  </div>
+</dialog>
+
+<script>
+  var rd = document.getElementById('rd');
+
+  function openR() {
+    if (typeof rd.showModal === 'function') {
+      rd.showModal();
+    } else {
+      rd.setAttribute('open', 'open');
+    }
+  }
+
+  document.addEventListener('click', function (event) {
+    if (event.target === rd) {
+      rd.close();
+    }
+  });
+</script>
 </body>
 </html>
